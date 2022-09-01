@@ -9,7 +9,7 @@ import { AuthModule } from './apis/auth/auth.module';
 @Module({
   imports: [
     UserModule,
-    AuthModule,
+
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -22,6 +22,8 @@ import { AuthModule } from './apis/auth/auth.module';
       synchronize: true,
       logging: true,
     }),
+
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
